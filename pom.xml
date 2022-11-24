@@ -78,32 +78,6 @@
 					<version>3.0.0</version>
 				</plugin>
       </plugins>
-      <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <imageTag>${project.version}</imageTag>
-                    <imageTag>latest</imageTag>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <directory>${project.build.directory}</directory>
-                            <include>app.jar</include>
-                            <targetPath>/</targetPath>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
     </pluginManagement>
   </build>
 </project>
